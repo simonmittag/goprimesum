@@ -1,6 +1,9 @@
 package goprimesum
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestCount(t *testing.T) {
 	p := PrimeCandidate{}
@@ -13,15 +16,11 @@ func TestPrime(t *testing.T) {
 
 	for _, p := range primes {
 		n := PrimeCandidate{}
-		if !n.IsPrime(p) {
-			t.Errorf("should be prime: %v", p)
-		}
+		assert.Truef(t, n.IsPrime(p), "is a prime")
 	}
 
 	for _, p := range nonprimes {
 		n := PrimeCandidate{}
-		if n.IsPrime(p) {
-			t.Errorf("should not be prime: %v", p)
-		}
+		assert.Falsef(t, n.IsPrime(p), "is not a prime")
 	}
 }
