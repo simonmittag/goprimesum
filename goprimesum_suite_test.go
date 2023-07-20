@@ -27,6 +27,23 @@ var _ = Describe("PrimeCandidates", func() {
 					Expect(primeCandidate.IsPrime(1)).To(BeFalse())
 				})
 			})
+			Context("3", func() {
+				It("is a prime", func() {
+					Expect(primeCandidate.IsPrime(1)).To(BeFalse())
+				})
+			})
+		})
+	})
+	Describe("Greater Than 10", func() {
+		Context("11", func() {
+			It("is a prime", func() {
+				Expect(primeCandidate.IsPrime(11)).To(BeTrue())
+			})
+		})
+		Context("13", func() {
+			It("is a prime", func() {
+				Expect(primeCandidate.IsPrime(13)).To(BeTrue())
+			})
 		})
 	})
 })
