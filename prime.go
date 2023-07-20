@@ -5,22 +5,23 @@ import (
 	"math"
 )
 
-type Prime struct{}
+type PrimeCandidate struct{}
 
-func (p *Prime) countTo100() {
+func (p *PrimeCandidate) CountTo100() {
 	a := make([]int, 100)
 	for i, _ := range a {
 		a[i] = i + 1
 	}
 	for _, ai := range a {
-		p1 := Prime{}
-		if p1.isPrime(ai) {
+		p1 := PrimeCandidate{}
+		if p1.IsPrime(ai) {
 			fmt.Printf("\nPrime: %v", ai)
 		}
 	}
 }
 
-func (p *Prime) isPrime(n int) bool {
+func (p *PrimeCandidate) IsPrime(n int) bool {
+	// 1 is not a prime
 	if n <= 1 {
 		return false
 	}
